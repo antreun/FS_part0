@@ -1,2 +1,2 @@
-# FullStack_HY
-Full Stack - sovelluskehitys
+# Full Stack - sovelluskehitys
+Osa 0
