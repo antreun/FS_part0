@@ -1,0 +1,35 @@
+kayttaja->selain:
+note left of selain
+Käyttaja kirjottaa osoiteriville
+fullstack-exampleapp.herokuapp.com/spa
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa
+
+palvelin->selain: status 200, notes
+
+note right of selain
+    Selain lataa HTML:ssä mainitun
+    JavaScript-tiedoston
+end note
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/spa.js
+palvelin->selain: status 200, main.js
+
+note right of selain
+    Selain suorittaa JavaScriptin, joka
+    lataa palvelimelta muistiinpanot
+    sisältävän JSON-tiedoston
+end note
+
+selain->palvelin: GET fullstack-exampleapp.herokuapp.com/data.json
+note left of palvelin
+    Luodaan palvelimella JSON-muotoinen 
+    lista muistiinpanoista
+end note
+palvelin->selain: status 200, data.json
+note right of selain
+    JavaScript lisää muistiinpanot
+    sivulle dynaamisesti
+end note
+note left of selain
+ Selain näyttää sivun muistiinpanoineen.
+end note
