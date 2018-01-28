@@ -1,0 +1,23 @@
+kayttaja->selain:
+note left of selain
+Käyttaja kirjoittaa uuden muistiinpanon
+ja painaa Talleta-nappia
+end note
+note right of selain
+    Selain luo muistiinpano-olion, lisää
+    sen taulukkoon ja päivittää näkymän.
+end note
+selain->kayttaja: Käyttäjän näkymä päivittyy\nuudella muistiinpanolla
+note right of selain
+    Tämän jälkeen selain lähettää uuden 
+    muistiinpanon palvelimelle taustalla
+end note
+
+selain->palvelin: POST fullstack-exampleapp.herokuapp.com/new_note_spa
+note left of palvelin
+    Palvelin lisää muistiinpanon omaan 
+    taulukkoonsa
+end note
+
+palvelin->selain: status 201 created
+
